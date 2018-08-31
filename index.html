@@ -1,0 +1,118 @@
+<html lang="en">
+
+<head>
+    <title>Mark Humans | NGO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
+<body ng-app="MarkHumans" ng-cloak>
+    <div class="header-nav" style="background-color: #2b3b56;color: #fff;padding: 15px">
+        <div class="row">
+            <div class="offset-md-1 col-md-5">
+                <h2><span><a href="#/"> <span class="first-part">Mark</span> <span class="second-part">Humans</span></a></span></h2>
+            </div>
+            <div class="col-md-6 text-right hidden-top-nav" style="padding-right:120px">
+                <div class="info-box">
+                    <div class="icon"><i class="material-icons">settings_phone</i></div>
+                    <div class="title">+91-7065412380</div>
+                    <div class="text">markhumans2017@gmail.com</div>
+                </div>
+                <div class="info-box">
+                    <div class="icon"><i class="material-icons">location_on</i></div>
+                    <div class="title">Address</div>
+                    <div class="text">Aligarh,U.P,INDIA</div>
+                </div>
+            </div>
+            <div class="mobile-bar"><a onClick="showHideBar()"><img src="assets/img/bar.jpg"></a></div>
+        </div>
+    </div>
+    <div class="ngo-navbar">
+        <div class="inner-nav">
+            <ul>
+                <li><a ui-sref="NGOhome" ui-sref-active="active" class="active">Home</a></li>
+                <li><a ui-sref="NGOabout">About</a></li>
+                <li><a ui-sref="NGOevents">Events</a></li>
+                <li><a ui-sref="NGOprojects">Projects</a></li>
+                <li><a ui-sref="NGOteam">Team</a></li>
+                <li><a ui-sref="NGOjoin">Join US</a></li>
+                <li><a ui-sref="NGOcontact">Contact Us</a></li>
+            </ul>
+            <div class="donate-button">
+                <a ui-sref="NGOdonate" class="active">Donate</a>
+            </div>
+        </div>
+    </div>
+    <div class="ngo-navbar mobile-navbar" id="innerNav">
+        <div class="inner-nav">
+            <ul>
+                <li><a ui-sref="NGOhome" ui-sref-active="active" class="active" onClick="showHideBar()">Home</a></li>
+                <li><a ui-sref="NGOabout" onClick="showHideBar()">About</a></li>
+                <li><a ui-sref="NGOevents" onClick="showHideBar()">Events</a></li>
+                <li><a ui-sref="NGOprojects" onClick="showHideBar()">Projects</a></li>
+                <li><a ui-sref="NGOteam" onClick="showHideBar()">Team</a></li>
+                <li><a ui-sref="NGOjoin" onClick="showHideBar()">Join US</a></li>
+                <li><a ui-sref="NGOcontact" onClick="showHideBar()">Contact Us</a></li>
+            </ul>
+            <div class="donate-button">
+                <a ui-sref="NGOdonate" class="active">Donate</a>
+            </div>
+        </div>
+    </div>
+    <ui-view></ui-view>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="assets/img/mark-logo.png" width="100px">
+                    <p>"It's not how much we give but how much love we put into giving."</p>
+                </div>
+                <div class="col-md-7 text-right">
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Events</li>
+                        <li>Volunteers</li>
+                        <li>Contact Us</li>
+                    </ul>
+                    <br>
+                    <ul class="social">
+                        <li>
+                            <a href=""><img src="assets/img/icons/facebook.png"></a>
+                        </li>
+                        <li>
+                            <a href=""><img src="assets/img/icons/twitter.png"></a>
+                        </li>
+                        <li>
+                            <a href=""><img src="assets/img/icons/youtube.ico"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+    <!-- Your application bootstrap  -->
+    <script src="assets/js/script.js"></script>
+    <script>
+        function showHideBar(){
+            var isClassExit = document.getElementsByClassName('show-mobile-nav');
+            if (isClassExit.length > 0) {
+                document.getElementById('innerNav').classList.remove('show-mobile-nav')
+            }else {
+                document.getElementById('innerNav').classList.add('show-mobile-nav')
+            }
+
+        }
+    </script>
+</body>
+
+</html>
